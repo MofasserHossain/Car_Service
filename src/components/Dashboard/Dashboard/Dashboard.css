@@ -1,0 +1,57 @@
+/* . dashboard */
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #d9e6f7;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+.sidebar a {
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+.sidebar span {
+  margin: 0 8px;
+}
+
+div.content {
+  margin-left: 200px;
+}
+
+.home {
+  margin: 0 !important;
+}
+.home a {
+  color: #1e69b8 !important;
+  font-size: 25px;
+  font-weight: 700;
+}
+.home a:hover {
+  color: #1e69b8 !important;
+}
+
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {
+    float: left;
+  }
+  div.content {
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+}

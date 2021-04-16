@@ -1,0 +1,74 @@
+.form {
+  margin: 20px;
+  background-color: #e6eafd;
+  border-radius: 10px;
+  padding: 10px;
+}
+.form_group input {
+  margin: 5px 0 !important;
+  display: block;
+  padding: 10px 20px;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+}
+.form_group input:focus {
+  outline: none;
+}
+
+.disable {
+  background-color: #86ff7b !important;
+  pointer-events: none !important;
+}
+.upload {
+  border: none;
+}
+.upload {
+  color: transparent;
+}
+.upload::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.upload::before {
+  content: 'Upload Product Image';
+  color: #3dca1acc;
+  display: inline-block;
+  background: #ccf1ccd3;
+  border: 1px solid #3dca1acc;
+  border-radius: 3px;
+  padding: 10px 20px;
+  outline: none;
+  white-space: nowrap;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 10pt;
+}
+.upload:active {
+  outline: 0;
+}
+.upload:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
+.form label {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: 500;
+}
+.form-top,
+.form-bottom {
+  display: flex;
+}
+.form_group {
+  width: 50%;
+  margin: 10px;
+}
+
+@media screen and (max-width: 700px) {
+  .form-top,
+  .form-bottom {
+    flex-direction: column;
+  }
+  .form_group {
+    width: 95%;
+  }
+}

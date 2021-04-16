@@ -1,0 +1,30 @@
+.footer__icon span {
+  margin-right: 15px;
+  color: #535353;
+}
+
+.footer__icon li {
+  font-size: 18px;
+  padding: 5px 0;
+}
+.footer__icon {
+  padding: 10px 0;
+}
+.f__service {
+  text-transform: capitalize;
+  font-size: 17px;
+  padding: 10px 0;
+}
+.f__service li {
+  padding: 5px;
+}
+.f__workingTime {
+  padding: 10px 0;
+  font-size: 17px;
+}
+
+.f__workingTime li {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}
