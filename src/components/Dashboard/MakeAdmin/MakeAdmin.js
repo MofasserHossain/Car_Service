@@ -15,7 +15,6 @@ const MakeAdmin = () => {
         if (res) {
           setUpdateStatus(true);
         }
-        // console.log('response', res);
       })
       .catch((error) => {
         console.log(error);
@@ -27,14 +26,14 @@ const MakeAdmin = () => {
         <h3>Make Admin</h3>
         <h4 className="primary__color">{loggedInUser.displayName}</h4>
       </div>
-      <div className="sidebar__right rounded">
+      <div className="sidebar__right pb-3 rounded">
         <h4 className="p-3">Email</h4>
         {updateStatus && (
           <p style={{ color: 'green', marginLeft: '15px' }}>
             Email Added SuccessFully
           </p>
         )}
-        <div className="px-3 adminForm form">
+        <div className="px-3 py-3 adminForm form">
           <form onSubmit={handleSubmit(onSubmit)}>
             <input
               type="text"

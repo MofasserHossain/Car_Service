@@ -37,8 +37,8 @@ const Team = () => {
       </div>
       <Container>
         <Row className="py-4 pt-5">
-          {teams.map((team) => (
-            <TeamCard team={team} />
+          {teams.map((team, idx) => (
+            <TeamCard key={idx} team={team} />
           ))}
         </Row>
       </Container>

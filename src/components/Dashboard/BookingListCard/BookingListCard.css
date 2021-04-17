@@ -1,0 +1,43 @@
+.bookingCard {
+  background-color: #fff;
+  padding: 20px;
+}
+
+.bookingCard .img {
+  width: 30%;
+}
+.Card__top h2 {
+  align-self: flex-start;
+}
+
+.bookingCard h2 {
+  font-size: 18px;
+  border-radius: 5px;
+  padding: 8px;
+}
+.pending {
+  color: #ff5a5a !important;
+  background-color: #ffe3e3;
+}
+.done {
+  color: #3ab372 !important;
+  background-color: #c6ffe0;
+}
+
+.ongoing {
+  background-color: #f5e9d4;
+  color: #ffa600 !important;
+}
+.default {
+  color: #000 !important;
+  background-color: #fff;
+}
+
+.bookingCard h3 {
+  font-size: 21px;
+  font-family: 600;
+}
+
+.bookingCard p {
+  font-size: 15px;
+}

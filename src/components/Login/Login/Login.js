@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
 import './Login.css';
-import 'firebase/auth';
 import { useHistory, useLocation, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
@@ -13,22 +12,16 @@ import {
 import { UserContext } from '../../../App';
 const Login = () => {
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+  const loginToken = sessionStorage.getItem('token');
   // . location
+  const [haveToken, setHaveToken] = useState(false);
   const history = useHistory();
   const location = useLocation();
   let { from } = location.state || { from: { pathname: '/' } };
   initializeFirebaseFramework();
-  const [user, setUser] = useState({
-    isSigned: false,
-    displayName: '',
-    email: '',
-    photo: '',
-    error: '',
-  });
-  console.log('user', user);
+
   const googleSignIn = () => {
     handleGoogleSignIn().then((res) => {
-      setUser(res);
       authToken();
       history.replace(from);
     });
@@ -36,11 +29,14 @@ const Login = () => {
   const authToken = () => {
     storeAuthToken().then((result) => {
       sessionStorage.setItem('token', result);
+      if (loginToken) {
+        setHaveToken(true);
+      }
       history.replace(from);
     });
   };
+
   useEffect(() => {
-    const loginToken = sessionStorage.getItem('token');
     if (loginToken) {
       const tokenDecoded = jwt_decode(loginToken);
       const user = {

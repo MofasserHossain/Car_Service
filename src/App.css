@@ -50,13 +50,13 @@ textarea:focus {
 
 .sidebar__right {
   background-color: #f4f7fc;
-  height: 95vh;
+  height: auto;
   margin: 10px;
   border-radius: 5px;
 }
 
 .spinner {
-  height: 90vh;
+  height: 80vh;
   display: flex;
   justify-content: center;
   align-items: center;

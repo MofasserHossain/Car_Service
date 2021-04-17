@@ -11,3 +11,7 @@
   border: none;
   border-radius: 5px;
 }
+
+.rating .MuiRating-label {
+  font-size: 35px;
+}

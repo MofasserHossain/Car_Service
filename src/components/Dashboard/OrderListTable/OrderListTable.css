@@ -1,0 +1,14 @@
+.table {
+  background-color: #fff;
+  padding: 10px !important;
+  border-radius: 5px;
+}
+.MuiSelect-select {
+  padding: 10px 25px 10px 10px !important;
+}
+.table,
+tr,
+th,
+td {
+  border: none !important;
+}

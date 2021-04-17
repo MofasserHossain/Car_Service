@@ -9,6 +9,7 @@ import Sidebar from '../Sidebar/Sidebar';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import OrderList from '../OrderList/OrderList';
 import ManageService from '../ManageService/ManageService';
+import EmptyBook from '../EmptyBook/EmptyBook';
 const Dashboard = () => {
   const { path } = useRouteMatch();
   return (
@@ -23,6 +24,9 @@ const Dashboard = () => {
           </Route>
           <Route path={`${path}/book/:id`}>
             <Book />
+          </Route>
+          <Route path={`${path}/book`}>
+            <EmptyBook />
           </Route>
           <Route path={`${path}/book-list`}>
             <BookingList />
