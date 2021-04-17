@@ -8,6 +8,7 @@ import AddService from '../AddService/AddService';
 import Sidebar from '../Sidebar/Sidebar';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import OrderList from '../OrderList/OrderList';
+import ManageService from '../ManageService/ManageService';
 const Dashboard = () => {
   const { path } = useRouteMatch();
   return (
@@ -34,6 +35,9 @@ const Dashboard = () => {
           </Route>
           <Route path={`${path}/make-admin`}>
             <MakeAdmin />
+          </Route>
+          <Route path={`${path}/manage-service`}>
+            <ManageService />
           </Route>
         </Switch>
       </div>

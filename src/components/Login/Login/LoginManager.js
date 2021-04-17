@@ -37,33 +37,6 @@ export const handleGoogleSignIn = async () => {
     });
 };
 
-export const handleGithubSignIn = async () => {
-  const githubProvider = new firebase.auth.GithubAuthProvider();
-  return firebase
-    .auth()
-    .signInWithPopup(githubProvider)
-    .then((res) => {
-      const { displayName, photoURL, email } = res.user;
-      const signedInUser = {
-        isSigned: true,
-        displayName: displayName,
-        email: email,
-        photo: photoURL,
-        success: true,
-      };
-      return signedInUser;
-    })
-    .catch((error) => {
-      var errorMessage = error.message;
-      console.log(errorMessage);
-      const signedInUser = {
-        error: errorMessage,
-        success: false,
-      };
-      return signedInUser;
-    });
-};
-
 export const storeAuthToken = () => {
   return firebase
     .auth()

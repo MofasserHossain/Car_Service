@@ -19,7 +19,7 @@ const Sidebar = () => {
           CARSERVICE
         </Link>
       </span>
-      <Link to={`${url}/book`}>
+      <Link to={`${url}/book/`}>
         <span>
           <FontAwesomeIcon icon={faShoppingCart} />
         </span>

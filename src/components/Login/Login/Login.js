@@ -1,14 +1,14 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './Login.css';
-// import firebase from 'firebase/app';
 import 'firebase/auth';
 import { useHistory, useLocation, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
-// import jwt_decode from 'jwt-decode';
+import jwt_decode from 'jwt-decode';
 import {
   handleGoogleSignIn,
   initializeFirebaseFramework,
+  storeAuthToken,
 } from './LoginManager';
 import { UserContext } from '../../../App';
 const Login = () => {
@@ -25,25 +25,33 @@ const Login = () => {
     photo: '',
     error: '',
   });
+  console.log('user', user);
   const googleSignIn = () => {
     handleGoogleSignIn().then((res) => {
       setUser(res);
-      setLoggedInUser(res);
-      //   storeAuthToken();
+      authToken();
       history.replace(from);
     });
   };
-  //   const storeAuthToken = () => {
-  //     firebase
-  //       .auth()
-  //       .currentUser.getIdToken(/* forceRefresh */ true)
-  //       .then(function (idToken) {
-  //         sessionStorage.setItem('token', idToken);
-  //       })
-  //       .catch(function (error) {
-  //         // Handle error
-  //       });
-  //   };
+  const authToken = () => {
+    storeAuthToken().then((result) => {
+      sessionStorage.setItem('token', result);
+      history.replace(from);
+    });
+  };
+  useEffect(() => {
+    const loginToken = sessionStorage.getItem('token');
+    if (loginToken) {
+      const tokenDecoded = jwt_decode(loginToken);
+      const user = {
+        displayName: tokenDecoded.name,
+        email: tokenDecoded.email,
+        photo: tokenDecoded.picture,
+      };
+      setLoggedInUser(user);
+      history.replace(from);
+    }
+  }, []);
 
   return (
     <div className="login text-center">

@@ -7,7 +7,6 @@ import './NavbarComponent.css';
 
 const NavbarComponent = () => {
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
-  console.log(loggedInUser);
   const handleLogOut = () => {
     sessionStorage.removeItem('token');
   };

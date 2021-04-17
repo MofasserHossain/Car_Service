@@ -1,0 +1,13 @@
+.reviewForm .form_group,
+.reviewForm textarea {
+  max-width: 400px !important;
+}
+
+.reviewForm .form_group input {
+  width: 100% !important;
+  margin: 5px 0 !important;
+  display: block;
+  padding: 10px 20px !important;
+  border: none;
+  border-radius: 5px;
+}

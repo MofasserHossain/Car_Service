@@ -4,11 +4,12 @@
   border-radius: 10px;
   padding: 10px;
 }
-.form_group input {
+
+.serviceFrom .form_group input {
   margin: 5px 0 !important;
   display: block;
-  padding: 10px 20px;
-  width: 100%;
+  padding: 10px 20px !important;
+  width: 100% !important;
   border: none;
   border-radius: 5px;
 }
@@ -16,8 +17,8 @@
   outline: none;
 }
 
-.disable {
-  background-color: #86ff7b !important;
+.button.disable {
+  background-color: #a2bdf8 !important;
   pointer-events: none !important;
 }
 .upload {
@@ -30,11 +31,11 @@
   visibility: hidden;
 }
 .upload::before {
-  content: 'Upload Product Image';
-  color: #3dca1acc;
+  content: 'Upload Service Image';
+  color: #1455b6cc;
   display: inline-block;
-  background: #ccf1ccd3;
-  border: 1px solid #3dca1acc;
+  background: #ccd8f1d3;
+  border: 1px solid #308edbcc;
   border-radius: 3px;
   padding: 10px 20px;
   outline: none;
@@ -54,13 +55,21 @@
   font-size: 18px;
   font-weight: 500;
 }
-.form-top,
-.form-bottom {
+.serviceFrom .form-top,
+.serviceFrom .form-bottom {
   display: flex;
 }
-.form_group {
-  width: 50%;
+.serviceFrom .form_group {
+  width: 50% !important;
   margin: 10px;
+}
+
+.text__area {
+  display: block;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  width: 100%;
 }
 
 @media screen and (max-width: 700px) {

@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 ul {
   list-style: none;
 }
@@ -28,7 +29,7 @@ img {
 }
 
 .btn__link {
-  color: #fff;
+  color: #fff !important;
 }
 .btn__link:hover {
   color: #fff;
@@ -42,7 +43,8 @@ section:nth-child(even) {
 .font__bold {
   font-weight: 700;
 }
-input:focus {
+input:focus,
+textarea:focus {
   outline: none;
 }
 
@@ -51,4 +53,17 @@ input:focus {
   height: 95vh;
   margin: 10px;
   border-radius: 5px;
+}
+
+.spinner {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
