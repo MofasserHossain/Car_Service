@@ -96,6 +96,14 @@ textarea:focus {
   margin-bottom: 5px;
 }
 
+.backToHome {
+  color: #1e69b8 !important;
+}
+
+.blogCard {
+  box-shadow: 0 0 5px #ddd;
+}
+
 @media (max-width: 991px) {
   .banner__content {
     max-width: 500px;

@@ -43,25 +43,25 @@ const Sidebar = () => {
       </span>
       {isAdmin ? (
         <>
-          <Link to={`${url}`}>
+          <Link className="sidebarLink" to={`${url}`}>
             <span>
               <FontAwesomeIcon icon={faShoppingBasket} />
             </span>
             Order List
           </Link>
-          <Link to={`${url}/addService`}>
+          <Link className="sidebarLink" to={`${url}/addService`}>
             <span>
               <FontAwesomeIcon icon={faPlus} />
             </span>
             Add Service
           </Link>
-          <Link to={`${url}/make-admin`}>
+          <Link className="sidebarLink" to={`${url}/make-admin`}>
             <span>
               <FontAwesomeIcon icon={faUserPlus} />
             </span>
             Make Admin
           </Link>
-          <Link to={`${url}/manage-service`}>
+          <Link className="sidebarLink" to={`${url}/manage-service`}>
             <span>
               <FontAwesomeIcon icon={faThLarge} />
             </span>
@@ -70,19 +70,19 @@ const Sidebar = () => {
         </>
       ) : (
         <>
-          <Link to={`${url}/book`}>
+          <Link className="sidebarLink" to={`${url}/book`}>
             <span>
               <FontAwesomeIcon icon={faShoppingCart} />
             </span>
             Book
           </Link>
-          <Link to={`${url}/book-list`}>
+          <Link className="sidebarLink" to={`${url}/book-list`}>
             <span>
               <FontAwesomeIcon icon={faShoppingBasket} />
             </span>
             Book List
           </Link>
-          <Link to={`${url}/addReview`}>
+          <Link className="sidebarLink" to={`${url}/addReview`}>
             <span>
               <FontAwesomeIcon icon={faCommentDots} />
             </span>

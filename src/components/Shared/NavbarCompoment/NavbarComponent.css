@@ -1,7 +1,8 @@
 .menu {
   padding: 20px 0;
+  box-shadow: 0 0 5px #c4c4c4;
 }
-.menu__items a {
+.menu__items > a {
   margin-left: 10px;
   display: flex;
   align-items: center;

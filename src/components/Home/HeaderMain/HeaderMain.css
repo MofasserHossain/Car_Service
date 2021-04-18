@@ -27,4 +27,5 @@
 
 .button {
   background-color: #1e69b8 !important;
+  display: inline-block !important;
 }

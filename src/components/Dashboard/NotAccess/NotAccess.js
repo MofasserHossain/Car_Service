@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const NotAccess = () => {
   return (
     <div className="noAccess">
-      <h3>Sorry You Have No Access in This Page</h3>
+      <h3>Sorry, Yon Have No Access in This Page</h3>
       <div className="d-flex mt-3">
         <Button className="btn button">
           <Link to={'/'} className="btn__link">

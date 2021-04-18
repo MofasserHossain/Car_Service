@@ -18,7 +18,9 @@ const EmptyBook = () => {
           style={{ textDecoration: 'underline' }}
           className="d-block text-center"
         >
-          <Link to={'/'}>Back To Home</Link>
+          <Link className="backToHome" to={'/'}>
+            Back To Home
+          </Link>
         </span>
       </div>
     </>

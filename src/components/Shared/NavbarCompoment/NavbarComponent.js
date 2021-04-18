@@ -71,14 +71,17 @@ const NavbarComponent = () => {
                     />
                   </span>
                 </a>
-                <Button onClick={handleLogOut} className="btn button ">
+                <Button
+                  onClick={handleLogOut}
+                  className="btn button d-inline-block"
+                >
                   <a href="/" className="btn__link">
                     Log Out
                   </a>
                 </Button>
               </>
             ) : (
-              <Button className="btn button">
+              <Button className="btn button d-inline-block">
                 <Link className="btn__link" to={'/login'}>
                   Log In
                 </Link>
