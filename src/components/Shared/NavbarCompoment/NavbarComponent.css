@@ -9,6 +9,9 @@
   font-size: 18px;
   font-weight: 500;
 }
+.menu__items a button {
+  justify-self: self-start !important;
+}
 
 .menu__icon {
   font-size: 30px;

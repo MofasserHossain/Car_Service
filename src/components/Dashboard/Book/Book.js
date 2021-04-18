@@ -15,7 +15,7 @@ const Book = () => {
   const { id } = useParams();
   console.log(id);
   useEffect(() => {
-    fetch(`http://localhost:5000/service/${id}`)
+    fetch(`https://fierce-falls-59592.herokuapp.com/service/${id}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -39,7 +39,7 @@ const Book = () => {
       orderStatus: 'Pending',
     };
     console.log(paymentMethod, paymentInfo);
-    const url = `http://localhost:5000/addOrder`;
+    const url = `https://fierce-falls-59592.herokuapp.com/addOrder`;
     axios
       .post(url, paymentInfo)
       .then((res) => {

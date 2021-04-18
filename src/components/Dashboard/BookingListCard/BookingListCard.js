@@ -16,7 +16,7 @@ const BookingListCard = ({ orders }) => {
       className = 'ongoing';
       break;
     default:
-      className = 'pending';
+      className = 'default';
       break;
   }
   return (

@@ -20,6 +20,7 @@ const OrderListTable = ({
       className = 'ongoing';
       break;
     default:
+      className = 'default';
       break;
   }
   return (

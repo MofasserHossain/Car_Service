@@ -1,15 +1,18 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Col, Row, Spinner } from 'react-bootstrap';
+import { Row, Spinner } from 'react-bootstrap';
 import { UserContext } from '../../../App';
 import ManageServiceCard from '../ManageServiceCard/ManageServiceCard';
+import NotAccess from '../NotAccess/NotAccess';
 
 const ManageService = () => {
-  const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+  const [loggedInUser, setLoggedInUser, admin, setAdmin] = useContext(
+    UserContext
+  );
   const [loadData, setLoadData] = useState(false);
   const [deleteData, setDeleteData] = useState(false);
   const [manageServices, setManageServices] = useState([]);
   useEffect(() => {
-    const url = 'http://localhost:5000/services';
+    const url = 'https://fierce-falls-59592.herokuapp.com/services';
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
@@ -25,7 +28,7 @@ const ManageService = () => {
   const deleteService = (id) => {
     console.log(id);
     // deleteService
-    const url = `http://localhost:5000/deleteService/${id}`;
+    const url = `https://fierce-falls-59592.herokuapp.com/deleteService/${id}`;
     fetch(url, {
       method: 'DELETE',
     })
@@ -45,15 +48,19 @@ const ManageService = () => {
             <h4 className="primary__color">{loggedInUser.displayName}</h4>
           </div>
           <div className="sidebar__right p-3">
-            <Row>
-              {manageServices.map((service, idx) => (
-                <ManageServiceCard
-                  key={idx}
-                  deleteService={deleteService}
-                  service={service}
-                />
-              ))}
-            </Row>
+            {admin ? (
+              <Row>
+                {manageServices.map((service, idx) => (
+                  <ManageServiceCard
+                    key={idx}
+                    deleteService={deleteService}
+                    service={service}
+                  />
+                ))}
+              </Row>
+            ) : (
+              <NotAccess />
+            )}
           </div>
         </>
       ) : (

@@ -12,16 +12,16 @@ import {
 const About = () => {
   return (
     <section className="about">
-      <div className="text-center">
+      <div className="text-center title">
         <h6 className="primary__color font__bold">ABOUT US</h6>
         <h2>About Our Services</h2>
       </div>
       <Container>
         <Row className="py-4 pt-5">
-          <Col md={5}>
+          <Col md={5} className="my-2">
             <img className="rounded" src={AboutUs} alt="" />
           </Col>
-          <Col md={{ span: 6, offset: 1 }}>
+          <Col md={{ span: 6, offset: 1 }} className="my-2">
             <h3>Welcome To Our Service</h3>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus

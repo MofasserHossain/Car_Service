@@ -6,7 +6,7 @@ const Services = () => {
   const [services, setServices] = useState([]);
   const [loadData, setLoadData] = useState(false);
   useEffect(() => {
-    const url = 'http://localhost:5000/services';
+    const url = 'https://fierce-falls-59592.herokuapp.com/services';
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
@@ -21,7 +21,7 @@ const Services = () => {
 
   return (
     <section>
-      <div className="text-center">
+      <div className="text-center title">
         <h6 className="primary__color font__bold">OUR SERVICES</h6>
         <h2>Our Featured Services</h2>
       </div>

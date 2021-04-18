@@ -1,16 +1,31 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Navbar, Nav, Container, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../../App';
-
 import './NavbarComponent.css';
+import jwt_decode from 'jwt-decode';
 
 const NavbarComponent = () => {
-  const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+  const [loggedInUser, setLoggedInUser, admin, setAdmin] = useContext(
+    UserContext
+  );
   const handleLogOut = () => {
     sessionStorage.removeItem('token');
   };
-
+  // . for show login login information in home page after reload (duplicate code from login page)
+  useEffect(() => {
+    const loginToken = sessionStorage.getItem('token');
+    if (loginToken) {
+      const tokenDecoded = jwt_decode(loginToken);
+      const { name, email, picture } = tokenDecoded;
+      const user = {
+        displayName: name,
+        email: email,
+        photo: picture,
+      };
+      setLoggedInUser(user);
+    }
+  }, []);
   return (
     <Navbar className="menu fixed-top" bg="light" expand="lg">
       <Container>
@@ -25,12 +40,26 @@ const NavbarComponent = () => {
             <Link className="links__color" to={'/'}>
               Home
             </Link>
-            <Link className="links__color" to={'/admin'}>
-              Admin
-            </Link>
-            <Link className="links__color" to={'/admin/book-list'}>
-              Booking List
-            </Link>
+            {admin && (
+              <>
+                <Link className="links__color" to={'/admin'}>
+                  Order List
+                </Link>
+                <Link className="links__color" to={'/admin/manage-service'}>
+                  Manage Service
+                </Link>
+              </>
+            )}
+            {!admin && (
+              <>
+                <Link className="links__color" to={'/admin/book-list'}>
+                  Booking List
+                </Link>
+                <Link className="links__color" to={'/admin/addReview'}>
+                  Give Review
+                </Link>
+              </>
+            )}
             {loggedInUser.email ? (
               <>
                 <a>

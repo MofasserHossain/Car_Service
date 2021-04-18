@@ -1,28 +1,8 @@
-.manageService {
-  background-color: #fff;
-  padding: 10px;
-  border-radius: 5px;
-}
-.manageService .img {
-  width: 40%;
-  height: 100%;
-}
-.manageService .img img {
-  height: 100% !important;
-}
-.serviceContent {
-  margin-left: 25px;
-}
-.serviceContent h4 {
-  font-size: 15px;
-  font-weight: 500;
-}
-.serviceContent .delete {
-  padding: 5px !important;
-  font-size: 14px;
+.Card__top span {
+  justify-self: flex-start;
 }
 
-.serviceContent span {
-  font-size: 18px;
-  font-weight: 500;
+.delete {
+  background-color: #ed5e68 !important;
+  border: none !important;
 }

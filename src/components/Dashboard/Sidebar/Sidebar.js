@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, useRouteMatch } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -9,9 +9,31 @@ import {
   faCommentDots,
   faUserPlus,
 } from '@fortawesome/free-solid-svg-icons';
+import { UserContext } from '../../../App';
 
 const Sidebar = () => {
   const { url } = useRouteMatch();
+  const [loggedInUser, setLoggedInUser, admin, setAdmin] = useContext(
+    UserContext
+  );
+  const [isAdmin, setIsAdmin] = useState(false);
+  useEffect(() => {
+    fetch(`https://fierce-falls-59592.herokuapp.com/isAdmin/`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email: loggedInUser.email }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data) {
+          setIsAdmin(data);
+          setAdmin(true);
+        }
+      });
+  }, []);
+  console.log(loggedInUser);
   return (
     <>
       <span className="home">
@@ -19,48 +41,55 @@ const Sidebar = () => {
           CARSERVICE
         </Link>
       </span>
-      <Link to={`${url}/book`}>
-        <span>
-          <FontAwesomeIcon icon={faShoppingCart} />
-        </span>
-        Book
-      </Link>
-      <Link to={`${url}/book-list`}>
-        <span>
-          <FontAwesomeIcon icon={faShoppingBasket} />
-        </span>
-        Book List
-      </Link>
-      <Link to={`${url}/addReview`}>
-        <span>
-          <FontAwesomeIcon icon={faCommentDots} />
-        </span>
-        Add Review
-      </Link>
-      <Link to={`${url}`}>
-        <span>
-          <FontAwesomeIcon icon={faShoppingBasket} />
-        </span>
-        Order List
-      </Link>
-      <Link to={`${url}/addService`}>
-        <span>
-          <FontAwesomeIcon icon={faPlus} />
-        </span>
-        Add Service
-      </Link>
-      <Link to={`${url}/make-admin`}>
-        <span>
-          <FontAwesomeIcon icon={faUserPlus} />
-        </span>
-        Make Admin
-      </Link>
-      <Link to={`${url}/manage-service`}>
-        <span>
-          <FontAwesomeIcon icon={faThLarge} />
-        </span>
-        Manage Services
-      </Link>
+      {isAdmin ? (
+        <>
+          <Link to={`${url}`}>
+            <span>
+              <FontAwesomeIcon icon={faShoppingBasket} />
+            </span>
+            Order List
+          </Link>
+          <Link to={`${url}/addService`}>
+            <span>
+              <FontAwesomeIcon icon={faPlus} />
+            </span>
+            Add Service
+          </Link>
+          <Link to={`${url}/make-admin`}>
+            <span>
+              <FontAwesomeIcon icon={faUserPlus} />
+            </span>
+            Make Admin
+          </Link>
+          <Link to={`${url}/manage-service`}>
+            <span>
+              <FontAwesomeIcon icon={faThLarge} />
+            </span>
+            Manage Services
+          </Link>
+        </>
+      ) : (
+        <>
+          <Link to={`${url}/book`}>
+            <span>
+              <FontAwesomeIcon icon={faShoppingCart} />
+            </span>
+            Book
+          </Link>
+          <Link to={`${url}/book-list`}>
+            <span>
+              <FontAwesomeIcon icon={faShoppingBasket} />
+            </span>
+            Book List
+          </Link>
+          <Link to={`${url}/addReview`}>
+            <span>
+              <FontAwesomeIcon icon={faCommentDots} />
+            </span>
+            Add Review
+          </Link>
+        </>
+      )}
     </>
   );
 };

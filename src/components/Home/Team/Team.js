@@ -1,9 +1,9 @@
 import React from 'react';
 import { Container, Row } from 'react-bootstrap';
-import TeamMember1 from '../../../images/team-1.jpg';
-import TeamMember2 from '../../../images/team-2.jpg';
-import TeamMember3 from '../../../images/team-3.jpg';
-import TeamMember4 from '../../../images/team-4.jpg';
+import TeamMember1 from '../../../images/team1.jpg';
+import TeamMember2 from '../../../images/team2.jpg';
+import TeamMember3 from '../../../images/team3.jpg';
+import TeamMember4 from '../../../images/team4.jpg';
 import TeamCard from '../TeamCard/TeamCard';
 
 const Team = () => {
@@ -31,7 +31,7 @@ const Team = () => {
   ];
   return (
     <section className="team">
-      <div className="text-center">
+      <div className="text-center title">
         <h6 className="primary__color font__bold">EXPERT PEOPLE</h6>
         <h2>Our Team Members</h2>
       </div>

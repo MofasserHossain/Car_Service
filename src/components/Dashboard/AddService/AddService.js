@@ -2,15 +2,18 @@ import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useHistory } from 'react-router';
 import { UserContext } from '../../../App';
+import NotAccess from '../NotAccess/NotAccess';
 import './AddService.css';
 const axios = require('axios');
 
 const AddService = () => {
-  const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+  const [loggedInUser, setLoggedInUser, admin, setAdmin] = useContext(
+    UserContext
+  );
   const history = useHistory();
   const [loadImage, setLoadImage] = useState(false);
   const [imageUrl, setImageUrl] = useState(null);
-  const { register, handleSubmit, watch, errors } = useForm();
+  const { register, handleSubmit, errors } = useForm();
   const onSubmit = (data) => {
     const serviceInfo = {
       serviceName: data.name,
@@ -19,7 +22,7 @@ const AddService = () => {
       serviceImage: imageUrl,
     };
     console.log(serviceInfo);
-    const url = `http://localhost:5000/addService`;
+    const url = `https://fierce-falls-59592.herokuapp.com/addService`;
     axios
       .post(url, serviceInfo)
       .then((res) => {
@@ -60,73 +63,77 @@ const AddService = () => {
         <h4 className="primary__color">{loggedInUser.displayName}</h4>
       </div>
       <div className="sidebar__right p-3">
-        <div className="form serviceFrom">
-          <form onSubmit={handleSubmit(onSubmit)} className="from">
-            <div className="form-top">
-              <div className="form_group">
-                <label>Service Title</label>
-                <input
-                  name="name"
-                  placeholder="Service Name"
-                  ref={register({ required: true })}
-                />
-                {errors.name && (
-                  <span style={error}>This field is required</span>
-                )}
+        {admin ? (
+          <div className="form serviceFrom">
+            <form onSubmit={handleSubmit(onSubmit)} className="from">
+              <div className="form-top">
+                <div className="form_group">
+                  <label>Service Title</label>
+                  <input
+                    name="name"
+                    placeholder="Service Name"
+                    ref={register({ required: true })}
+                  />
+                  {errors.name && (
+                    <span style={error}>This field is required</span>
+                  )}
+                </div>
+                <div className="form_group">
+                  <label>Service Price</label>
+                  <input
+                    name="price"
+                    type="number"
+                    placeholder="Service Price"
+                    ref={register({ required: true })}
+                  />
+                  {errors.weight && (
+                    <span style={error}>This field is required</span>
+                  )}
+                </div>
               </div>
-              <div className="form_group">
-                <label>Service Price</label>
-                <input
-                  name="price"
-                  type="number"
-                  placeholder="Service Price"
-                  ref={register({ required: true })}
-                />
-                {errors.weight && (
-                  <span style={error}>This field is required</span>
-                )}
+              <div className="form-bottom">
+                <div className="form_group">
+                  <label>Service Description</label>
+                  <textarea
+                    rows="4"
+                    cols="38"
+                    className="text__area"
+                    name="desc"
+                    type="number"
+                    placeholder="Service Description"
+                    ref={register({ required: true })}
+                  ></textarea>
+                  {errors.price && (
+                    <span style={error}>This field is required</span>
+                  )}
+                </div>
+                <div className="form_group">
+                  <label>Upload Image</label>
+                  <input
+                    className="upload"
+                    name="image"
+                    type="file"
+                    onChange={handleImageUpload}
+                  />
+                </div>
               </div>
-            </div>
-            <div className="form-bottom">
-              <div className="form_group">
-                <label>Service Description</label>
-                <textarea
-                  rows="4"
-                  cols="38"
-                  className="text__area"
-                  name="desc"
-                  type="number"
-                  placeholder="Service Description"
-                  ref={register({ required: true })}
-                ></textarea>
-                {errors.price && (
-                  <span style={error}>This field is required</span>
-                )}
-              </div>
-              <div className="form_group">
-                <label>Upload Image</label>
-                <input
-                  className="upload"
-                  name="image"
-                  type="file"
-                  onChange={handleImageUpload}
-                />
-              </div>
-            </div>
-            <input
-              className={
-                loadImage
-                  ? 'btn button btn__link'
-                  : 'btn button btn__link disable'
-              }
-              style={{
-                padding: '10px 20px',
-                margin: '10px',
-              }}
-              type="Submit"
-            />
-          </form>
-        </div>
+              <input
+                className={
+                  loadImage
+                    ? 'btn button btn__link'
+                    : 'btn button btn__link disable'
+                }
+                style={{
+                  padding: '10px 20px',
+                  margin: '10px',
+                }}
+                type="Submit"
+              />
+            </form>
+          </div>
+        ) : (
+          <NotAccess />
+        )}
       </div>
     </>
   );

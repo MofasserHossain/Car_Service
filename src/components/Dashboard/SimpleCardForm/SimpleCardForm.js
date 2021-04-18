@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
 import {
   useStripe,
   useElements,
@@ -33,6 +33,7 @@ const SimpleCardForm = ({ handlePayment, servicePrice }) => {
   const stripe = useStripe();
   const elements = useElements();
   const options = useOptions();
+  const [error, setError] = useState('');
 
   const handleSubmit = async (event) => {
     // Block native form submission.
@@ -48,6 +49,7 @@ const SimpleCardForm = ({ handlePayment, servicePrice }) => {
     });
     if (error) {
       console.log('[error]', error);
+      setError(error.message);
     } else {
       handlePayment(paymentMethod);
       console.log('[PaymentMethod]', paymentMethod);
@@ -117,6 +119,7 @@ const SimpleCardForm = ({ handlePayment, servicePrice }) => {
             </label>
           </Col>
         </Row>
+        {error && <p style={{ color: 'red' }}>{error}</p>}
         <span className="charge">
           Your Service Charge{' '}
           <span className="servicePrice">{servicePrice}$</span>
@@ -127,7 +130,7 @@ const SimpleCardForm = ({ handlePayment, servicePrice }) => {
           type="submit"
           disabled={!stripe}
         >
-          Pay
+          Place Order
         </button>
       </form>
     </>

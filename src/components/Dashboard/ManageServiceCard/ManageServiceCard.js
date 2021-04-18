@@ -3,25 +3,22 @@ import { Button, Col } from 'react-bootstrap';
 import './ManageServiceCard.css';
 
 const ManageServiceCard = ({ service, deleteService }) => {
-  const { _id, serviceName, servicePrice, serviceImage } = service;
+  const { _id, serviceName, serviceImage, serviceDesc } = service;
   return (
     <Col md={4} className="my-3">
-      <div className="manageService d-flex">
-        <div className="img">
-          <img className="rounded" src={serviceImage} alt={serviceName} />
-        </div>
-        <div className="serviceContent">
-          <h4>{serviceName}</h4>
-          <div className="d-flex justify-content-between mt-4">
-            <span>{servicePrice}$</span>
-            <Button
-              onClick={() => deleteService(_id)}
-              className="btn btn-danger delete"
-            >
+      <div className="bookingCard rounded">
+        <div className="Card__top d-flex justify-content-between mb-3">
+          <div className="img">
+            <img className="rounded" src={serviceImage} alt={serviceName} />
+          </div>
+          <span>
+            <Button onClick={() => deleteService(_id)} className="btn delete">
               Delete
             </Button>
-          </div>
+          </span>
         </div>
+        <h3>{serviceName}</h3>
+        <p>{serviceDesc}</p>
       </div>
     </Col>
   );

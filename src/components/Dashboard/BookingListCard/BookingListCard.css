@@ -32,7 +32,19 @@
   color: #000 !important;
   background-color: #fff;
 }
-
+.pending:focus,
+.ongoing:focus,
+.done:focus .MuiSelect-select:focus option:nth-child(2),
+option:nth-child(3),
+option:last-child,
+.MuiInputBase-input:focus option:nth-child(2),
+option:nth-child(3),
+option:last-child,
+.MuiInput-input:focus option:nth-child(2),
+option:nth-child(3),
+option:last-child {
+  color: #000000 !important;
+}
 .bookingCard h3 {
   font-size: 21px;
   font-family: 600;

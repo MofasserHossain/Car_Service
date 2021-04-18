@@ -6,7 +6,7 @@ const Review = () => {
   const [reviews, setReviews] = useState([]);
   const [loadData, setLoadData] = useState(false);
   useEffect(() => {
-    const url = 'http://localhost:5000/reviews';
+    const url = 'https://fierce-falls-59592.herokuapp.com/reviews';
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
@@ -20,7 +20,7 @@ const Review = () => {
   }, []);
   return (
     <section className="review ">
-      <div className="text-center ">
+      <div className="text-center title">
         <h6 className="primary__color font__bold">CLIENT REVIEW</h6>
         <h2>Our Service Review</h2>
       </div>

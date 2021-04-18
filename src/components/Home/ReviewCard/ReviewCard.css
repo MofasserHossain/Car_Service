@@ -16,6 +16,7 @@
   border: 6px solid #fff;
   position: absolute;
   left: -45px;
+  box-shadow: 0 0 2px #ddd;
 }
 .review-item h3 {
   font-size: 18px;

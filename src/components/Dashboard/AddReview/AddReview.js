@@ -21,7 +21,7 @@ const AddReview = () => {
       userImg: loggedInUser.photo,
       rating: ratingValue,
     };
-    const url = `http://localhost:5000/addReviews`;
+    const url = `https://fierce-falls-59592.herokuapp.com/addReviews`;
     axios
       .post(url, serviceInfo)
       .then((res) => {
