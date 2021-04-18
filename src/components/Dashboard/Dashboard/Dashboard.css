@@ -40,8 +40,9 @@ div.content {
 }
 
 .home {
-  display: block;
+  display: block !important;
   text-align: center;
+  width: 100% !important;
 }
 .home a {
   color: #051677 !important;

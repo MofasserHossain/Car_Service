@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch, useRouteMatch } from 'react-router-dom';
+import { Link, Route, Switch, useRouteMatch } from 'react-router-dom';
 import './Dashboard.css';
 import BookingList from '../BookingList/BookingList';
 import Book from '../Book/Book';
@@ -15,6 +15,11 @@ const Dashboard = () => {
   return (
     <div className="dashboard">
       <div className="sidebar">
+        <h3 className="home">
+          <Link className="primary__color" to={'/'}>
+            CARSERVICE
+          </Link>
+        </h3>
         <Sidebar />
       </div>
       <div className="content">

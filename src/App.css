@@ -103,12 +103,17 @@ textarea:focus {
 .blogCard {
   box-shadow: 0 0 5px #ddd;
 }
-
+.dashboard__menu h4 {
+  font-size: 24px;
+}
+.dashboard__menu h4 {
+  font-weight: 600;
+}
 @media (max-width: 991px) {
   .banner__content {
-    max-width: 500px;
-    padding: 40px 20px;
-    left: 4%;
+    max-width: 500px !important;
+    padding: 40px 20px !important;
+    left: 4% !important;
     position: inherit;
     display: flex;
     flex-direction: column;
@@ -119,19 +124,19 @@ textarea:focus {
     align-self: flex-start;
   }
   .banner__content h3 {
-    font-size: 35px;
+    font-size: 35px !important;
   }
   .team h3 {
-    font-size: 25px;
+    font-size: 25px !important;
   }
   .teamCard {
-    padding: 20px 40px;
+    padding: 20px 40px !important;
   }
 }
 
 @media (max-width: 768px) {
   .banner__content {
-    left: 2%;
+    left: 4% !important;
   }
   .review-main {
     padding-left: 10px !important;
@@ -147,37 +152,51 @@ textarea:focus {
     position: static;
     left: auto;
   }
+  .menu__items > a {
+    margin: 10px 0;
+  }
 }
 
 @media (max-width: 567px) {
   .banner__content {
-    left: 0%;
-    margin: 0 20px;
+    left: 0% !important;
+    margin: 0 20px !important;
   }
   .title h2 {
-    font-size: 25px;
+    font-size: 25px !important;
     font-weight: 500;
   }
   .service__dees > h3 {
-    font-size: 23px;
+    font-size: 23px !important;
     font-weight: 500;
   }
   .service__dees p {
     font-size: 15px;
   }
+  .menu__icon {
+    font-size: 25px !important;
+  }
 }
 
 @media (max-width: 490px) {
   .banner__content h3 {
-    font-size: 25px;
+    font-size: 25px !important;
+    margin-top: 10px !important;
+  }
+  .dashboard__menu h3 {
+    font-size: 16px !important;
+    font-weight: 600;
+  }
+  .dashboard__menu h4 {
+    font-size: 18px !important;
   }
 }
 
 @media (max-width: 390px) {
   .banner__content h3 {
-    font-size: 20px;
+    font-size: 20px !important;
   }
   .banner__content p {
-    font-size: 15px;
+    font-size: 15px !important;
   }
 }

@@ -55,7 +55,7 @@ const Book = () => {
 
   return (
     <>
-      <div className="p-3 d-flex justify-content-between">
+      <div className="p-3 d-flex justify-content-between dashboard__menu">
         <h3>Book</h3>
         <h4 className="primary__color">{loggedInUser.displayName}</h4>
       </div>

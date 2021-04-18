@@ -77,7 +77,7 @@
   .form-bottom {
     flex-direction: column;
   }
-  .form_group {
-    width: 95%;
+  .serviceFrom .form_group {
+    width: 100% !important;
   }
 }

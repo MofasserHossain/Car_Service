@@ -36,11 +36,6 @@ const Sidebar = () => {
   console.log(loggedInUser);
   return (
     <>
-      <span className="home">
-        <Link className="primary__color" to={'/'}>
-          CARSERVICE
-        </Link>
-      </span>
       {isAdmin ? (
         <>
           <Link className="sidebarLink" to={`${url}`}>

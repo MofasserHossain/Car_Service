@@ -78,7 +78,7 @@ const SimpleCardForm = ({ handlePayment, servicePrice }) => {
           />
         </label>
         <Row>
-          <Col>
+          <Col sm={6}>
             <label>
               Expiration date
               <CardExpiryElement
@@ -98,7 +98,7 @@ const SimpleCardForm = ({ handlePayment, servicePrice }) => {
               />
             </label>
           </Col>
-          <Col>
+          <Col sm={6}>
             <label>
               CVC
               <CardCvcElement

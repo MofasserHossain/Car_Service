@@ -28,7 +28,6 @@ const AddReview = () => {
         if (res) {
           history.push('/');
         }
-        // console.log('response', res);
       })
       .catch((error) => {
         console.log(error);
@@ -40,7 +39,7 @@ const AddReview = () => {
   };
   return (
     <>
-      <div className="p-3 d-flex justify-content-between">
+      <div className="p-3 d-flex justify-content-between dashboard__menu">
         <h3>Add Review</h3>
         <h4 className="primary__color">{loggedInUser.displayName}</h4>
       </div>
