@@ -104,10 +104,10 @@ textarea:focus {
   box-shadow: 0 0 5px #ddd;
 }
 .dashboard__menu h4 {
-  font-size: 24px;
+  font-size: 24px !important;
 }
 .dashboard__menu h4 {
-  font-weight: 600;
+  font-weight: 600 !important;
 }
 @media (max-width: 991px) {
   .banner__content {
@@ -132,6 +132,12 @@ textarea:focus {
   .teamCard {
     padding: 20px 40px !important;
   }
+  .blogCard h5 {
+    font-size: 16px;
+  }
+  .blogCard p {
+    font-size: 14px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -155,6 +161,12 @@ textarea:focus {
   .menu__items > a {
     margin: 10px 0;
   }
+  .blogCard h5 {
+    font-size: 22px;
+  }
+  .blogCard p {
+    font-size: 16px;
+  }
 }
 
 @media (max-width: 567px) {
@@ -175,6 +187,12 @@ textarea:focus {
   }
   .menu__icon {
     font-size: 25px !important;
+  }
+  .blogCard h5 {
+    font-size: 18px;
+  }
+  .blogCard p {
+    font-size: 15px;
   }
 }
 

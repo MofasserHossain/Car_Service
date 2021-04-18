@@ -29,7 +29,6 @@ const AddService = () => {
         if (res) {
           history.push('/');
         }
-        // console.log('response', res);
       })
       .catch((error) => {
         console.log(error);

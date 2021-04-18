@@ -20,7 +20,7 @@ const BookingListCard = ({ orders }) => {
       break;
   }
   return (
-    <Col md={4} className="my-2">
+    <Col lg={4} md={6} className="my-2">
       <div className="bookingCard rounded">
         <div className="Card__top d-flex justify-content-between mb-3">
           <div className="img">
