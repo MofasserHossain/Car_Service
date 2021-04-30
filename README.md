@@ -1,6 +1,26 @@
-# Project Name : Car Service
+# Car Service Booking Website
 
-Here is the live [link : Car Service](https://car-service-1c30a.web.app/).
+It's a single page web application. Users can book car repair services with payment, view their orders and give reviews. I used Firebase authentication for login. There is a separate admin dashboard where admin can update order status, add and remove services, and make another person admin.
+
+[Live Website](https://car-service-1c30a.web.app/) | [Server Live Link](https://fierce-falls-59592.herokuapp.com).
+
+### Front-end language & Tools
+
+- React JS
+- React-Bootstrap
+- Material UI
+- CSS3
+- Font-awesome
+- Firebase Authentication. `for log-in process`
+- Firebase Deploy - `for deploy website in live`
+
+### Front-end language & Tools
+
+- Node JS
+- Express JS
+- MongoDB
+- Environment Variable
+- Heroku - `for deploy back-end api`
 
 ## How to setup in local desktop
 
